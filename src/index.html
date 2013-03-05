@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Lasercake: An open-world game about the environment</title>
+	<link rel="canonical" href="http://www.lasercake.net/" />
+	<link rel="shortcut icon" href="//d2dvq9ryeo0vx7.cloudfront.net/blah_v1.ico" />
+	<style>
+/* CSS reset */
+article,aside,figure,footer,header,hgroup,menu,nav,section{display:block;}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:inherit;}
+img{color:transparent;font-size:0;border:0;vertical-align:middle;-ms-interpolation-mode:bicubic;}
+
+/*height/width/table: vertical centering.*/
+html,body {
+	height: 100%;
+	width: 100%;
+	background-color: #CFC; /* ;-) */
+	color: #420;
+}
+html {
+	display: table;
+}
+body {
+	position: relative;
+	text-align: center;
+	font-size: 48px;
+	font-family: Verdana, sans-serif;
+	display: table-cell;
+	vertical-align: middle;
+}
+a:link {
+	color: blue;
+}
+a:visited {
+	color: purple;
+}
+#eli, #isaac {
+	display: block;
+	position: absolute;
+	position: fixed;
+	bottom: 0;
+	background-color: rgb(100, 255, 100);
+	background-color: rgba(100, 255, 100, 0.8);
+	font-size: 20px;
+	padding: 8px;
+	margin: 0;
+	text-decoration: none;
+}
+#eli {
+	border-top-right-radius: 20px;
+	padding-right: 11px;
+	left: 0;
+}
+#isaac {
+	border-top-left-radius: 20px;
+	padding-left: 11px;
+	right: 0;
+}
+#eli:hover, #isaac:hover, #eli:active, #isaac:active, #eli:focus, #isaac:focus {
+	background-color: rgb(200, 255, 200);
+	background-color: rgba(200, 255, 200, 0.9);
+	text-decoration: underline;
+}
+#central {
+	position: relative;
+	bottom: -2em;
+	font-size: 50%;
+	background-color: rgb(200, 255, 200);
+	border-radius: 2em;
+	margin: 10px auto 15%;
+	max-width: 25em;
+	padding: 0.5em;
+	box-shadow: 1px 1px 3px 3px rgba(0,127,0,0.5);
+}
+#central a {
+	text-decoration: none;
+}
+span.download {
+	font-size: 300%;
+}
+#central a:hover, #central a:active, #central a:focus {
+	text-decoration: underline;
+	color: rgb(100, 100, 255);
+	text-shadow: 0 0 2em rgb(100,255,100), 0 0 0.4em rgb(100,255,100), 0 0 0.4em rgb(100,255,100),
+		0 0 0.4em rgb(100,255,100);
+}
+#project {
+	background-color: rgb(170, 255, 170);
+	max-width: 18em;
+	margin: 0 auto;
+	position: relative;
+	top: 1em;
+	border-radius: 0.5em;
+	padding: 3px;
+	box-shadow: 1px 1px 2px 2px rgba(0,127,0,0.5);
+}
+
+a.download-link {
+	display:none;
+}
+body.windows.x86 a.download-link.windows.x86 { display:inline; }
+body.windows.x64 a.download-link.windows.x64 { display:inline; }
+body.mac.x64 a.download-link.mac.x64 { display:inline; }
+body.linux.x86 a.download-link.linux.x86 { display:inline; }
+body.linux.x64 a.download-link.linux.x64 { display:inline; }
+body.unknown a.download-link.unknown { display:inline; }
+body.unknown span#download-other-plus-separators { display:none; }
+
+img.background {
+/*Using an img rather than "background-image:" partly because more browsers
+render progressive JPEGs progressively for non-background images and partly
+because the image contains text and this is an easy way for us to provide
+alt text.*/
+	position: absolute;
+	position: fixed;
+	display: block;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+}
+@media (max-aspect-ratio: 1/1) {
+img.background {
+	width: 200%;
+	left: -50%;
+	right: -50%;
+}
+}
+@media (max-width: 640px) {
+body {
+	font-size: 24px;
+}
+#a-game {
+	right: 7em;
+}
+}
+	</style>
+</head>
+<!-- so, if IE <= 8 and no JavaScript, the Win32 binary is a good guess. -->
+<!--[if !lte IE 8]><!--><body class="unknown"><!--<![endif]-->
+<!--[if lte IE 8]><body class="windows x86"><![endif]-->
+	<script>
+	/* @licstart HTML/CSS/JS freely AGPL3+-licensed by Isaac Dupree, 2013 @licend */
+	(function(){
+		"use strict";
+		var ua = window.navigator.userAgent;
+		var cls;
+		if(/Intel Mac OS X/.test(ua)) {
+			cls = 'mac x64';
+		} else if(/(Win64|WOW64)/.test(ua)) {
+			cls = 'windows x64';
+		} else if(/Windows NT/.test(ua)) {
+			cls = 'windows x86';
+		} else if(/Linux x86_64/.test(ua)) {
+			cls = 'linux x64';
+		} else if(/Linux i[3456]86/.test(ua)) {
+			cls = 'linux x86';
+		} else {
+			cls = 'unknown';
+		}
+		document.body.className = cls;
+	}());
+	</script>
+	<img class="background" src="//d2dvq9ryeo0vx7.cloudfront.net/lasercake-snapshot-progressive-v1.jpg" alt="Lasercake: an open-world game about the environment" />
+	<h1 id="game-title">Lasercake</h1>
+	<p id="game-subtitle">Renew Your World</p>
+	<p id="a-game">a game</p>
+	<div id="central">
+		<p id="downloads"
+		><span id="main-download"
+			><a class="unknown download-link" href="downloads.html"><span class="download">Download</span></a
+			><a class="windows x86 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Windows</span></a
+			><a class="windows x64 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x64-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x64 Windows</span></a
+			><a class="mac x64 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86_64-mac.dmg"><span class="download">Download</span><br /><span class="which-download">0.22; Mac OS X</span></a
+			><a class="linux x86 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Linux</span></a
+			><a class="linux x64 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86_64-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86_64 Linux</span></a
+		></span><span id="download-other-plus-separators"
+		> | <a id="download-other" href="downloads.html">Other downloads</a
+		></span
+		><p id="project"><a href="blurb.html">About</a>
+		| <a href="https://groups.google.com/d/forum/lasercake" title="Google Group,
+a forum / email list:
+lasercake@googlegroups.com">Discuss</a>
+		| <a href="https://webchat.freenode.net/?channels=lasercake" title="real-time chat:
+freenode #lasercake">IRC</a>
+		| <a id="github" title="issue tracking and source code" href="https://github.com/Lasercake/Lasercake">GitHub</a></p></p>
+	</div>
+	<div id="footer">
+	<a id="eli" href="http://www.elidupree.com/main/">Eli Dupree</a>
+	<a id="isaac" href="http://www.idupree.com/">Isaac Dupree</a>
+	</div>
+</body>
+</html>
