@@ -10,6 +10,10 @@ import os, sys, subprocess
 # encoding in a <meta> tag before everything else in <head>.
 # https://github.com/s3tools/s3cmd/blob/master/NEWS
 
+# Note that Cloudfront allows any cache duration from 0 on up,
+# but if you don't specify one, it will default to caching for
+# 24 hours.  So specify!
+# http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html
 cache15minutes = '--add-header=Cache-Control: max-age=900'
 cache2hours = '--add-header=Cache-Control: max-age=7200'
 
