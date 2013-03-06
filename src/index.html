@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<title>Lasercake: An open-world game about the environment</title>
 	<link rel="canonical" href="http://www.lasercake.net/" />
-	<link rel="shortcut icon" href="//d2dvq9ryeo0vx7.cloudfront.net/blah_v1.ico" />
+	<link rel="shortcut icon" href="/_cacheable/favicon.ico" />
 	<style>
 /* CSS reset */
 article,aside,figure,footer,header,hgroup,menu,nav,section{display:block;}
@@ -36,6 +36,20 @@ a:link {
 a:visited {
 	color: purple;
 }
+#game-title {
+	font-size: 200%;
+	font-weight: bold;
+	color: #ff0;
+	text-shadow: 0 0 2em green, 0 0 0.4em green, 0 0 0.4em green,
+		-0.2em -0.2em 0.4em green;
+}
+#game-subtitle {
+	font-size: 100%;
+	color: #ff0;
+	text-shadow: 0 0 2em green, 0 0 0.4em green, 0 0 0.4em green,
+		-0.2em -0.2em 0.4em green;
+	margin-bottom: 1px;
+}
 #eli, #isaac {
 	display: block;
 	position: absolute;
@@ -65,7 +79,7 @@ a:visited {
 }
 #central {
 	position: relative;
-	bottom: -2em;
+	/*bottom: -2em;*/
 	font-size: 50%;
 	background-color: rgb(200, 255, 200);
 	border-radius: 2em;
@@ -122,6 +136,9 @@ alt text.*/
 	left: 0;
 	right: 0;
 }
+img.lasercake-icon {
+	vertical-align: baseline;
+}
 @media (max-aspect-ratio: 1/1) {
 img.background {
 	width: 200%;
@@ -164,23 +181,24 @@ body {
 		document.body.className = cls;
 	}());
 	</script>
-	<img class="background" src="//d2dvq9ryeo0vx7.cloudfront.net/lasercake-snapshot-progressive-v1.jpg" alt="Lasercake: an open-world game about the environment" />
-	<h1 id="game-title">Lasercake</h1>
-	<p id="game-subtitle">Renew Your World</p>
-	<p id="a-game">a game</p>
+	<div><img class="background" src="/_cacheable/lasercake-snapshot-progressive.jpg" alt="a screenshot shows a landscape being terraformed by lasers and a tower with water spilling out and mystical lines of debugging-power through it" /></div>
 	<div id="central">
+		<hgroup>
+		<h1 id="game-title">Lasercake</h1>
+		<h2 id="game-subtitle">an open-world game about the environment</h2>
+		</hgroup>
 		<p id="downloads"
-		><span id="main-download"
+		><img class="lasercake-icon" src="/_cacheable/icon-64x64.png" width="64" height="64" alt="Lasercake" /><span id="main-download"
 			><a class="unknown download-link" href="downloads.html"><span class="download">Download</span></a
-			><a class="windows x86 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Windows</span></a
-			><a class="windows x64 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x64-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x64 Windows</span></a
-			><a class="mac x64 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86_64-mac.dmg"><span class="download">Download</span><br /><span class="which-download">0.22; Mac OS X</span></a
-			><a class="linux x86 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Linux</span></a
-			><a class="linux x64 download-link" href="https://lasercake.s3.amazonaws.com/Lasercake-0.22-x86_64-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86_64 Linux</span></a
+			><a class="windows x86 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Windows</span></a
+			><a class="windows x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x64-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x64 Windows</span></a
+			><a class="mac x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86_64-mac.dmg"><span class="download">Download</span><br /><span class="which-download">0.22; Mac OS X</span></a
+			><a class="linux x86 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Linux</span></a
+			><a class="linux x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86_64-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86_64 Linux</span></a
 		></span><span id="download-other-plus-separators"
-		> | <a id="download-other" href="downloads.html">Other downloads</a
+		> | <a id="download-other" href="/downloads">Other downloads</a
 		></span
-		><p id="project"><a href="blurb.html">About</a>
+		><p id="project"><a href="/blurb">About</a>
 		| <a href="https://groups.google.com/d/forum/lasercake" title="Google Group,
 a forum / email list:
 lasercake@googlegroups.com">Discuss</a>

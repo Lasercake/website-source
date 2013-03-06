@@ -64,6 +64,7 @@ a:visited{color:purple;}
 </head>
 <body>
 <p><a href="http://www.lasercake.net/"><img src="//d2dvq9ryeo0vx7.cloudfront.net/_cacheable/icon-64x64.png" alt="Lasercake" /></a> <a href="http://www.lasercake.net/downloads">[back]</a></p>
+<p>PGP sigs are by Isaac Dupree, fingerprint AC5B DA24 40BD BF34 C4C7 DCF3 9ADC 2732 1706 2391</p>
 <table>
 <tr>
 <th>file</th>

@@ -27,7 +27,7 @@
 #   tmp/ : intermediate files used in compiling but not elsewhere
 #   compiled/
 #     www.lasercake.net/ : canonical paths on www.lasercake.net
-#         (which is hosted on Cloudfront, backed by S3 bucket 'www.lasercake.net')
+#         (which is hosted on Cloudfront, backed by S3 bucket 'www-lasercake-net')
 #     s3-lasercake/ : goes to s3://lasercake/ i.e. lasercake.s3.amazonaws.com
 #         which is used for serving the Lasercake downloads via HTTPS with
 #         a semi-user-friendly URL.
