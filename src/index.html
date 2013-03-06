@@ -37,18 +37,20 @@ a:visited {
 	color: purple;
 }
 #game-title {
+	position: relative;
 	font-size: 200%;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	color: #ff0;
 	text-shadow: 0 0 2em green, 0 0 0.4em green, 0 0 0.4em green,
 		-0.2em -0.2em 0.4em green;
 }
 #game-subtitle {
-	font-size: 100%;
+	position: relative;
+	font-size: 90%;
 	color: #ff0;
 	text-shadow: 0 0 2em green, 0 0 0.4em green, 0 0 0.4em green,
 		-0.2em -0.2em 0.4em green;
-	margin-bottom: 1px;
+	margin-bottom: 1em;
 }
 #eli, #isaac {
 	display: block;
@@ -182,11 +184,11 @@ body {
 	}());
 	</script>
 	<div><img class="background" src="/_cacheable/lasercake-snapshot-progressive.jpg" alt="a screenshot shows a landscape being terraformed by lasers and a tower with water spilling out and mystical lines of debugging-power through it" /></div>
-	<div id="central">
-		<hgroup>
+	<hgroup>
 		<h1 id="game-title">Lasercake</h1>
 		<h2 id="game-subtitle">an open-world game about the environment</h2>
-		</hgroup>
+	</hgroup>
+	<div id="central">
 		<p id="downloads"
 		><img class="lasercake-icon" src="/_cacheable/icon-64x64.png" width="64" height="64" alt="Lasercake" /><span id="main-download"
 			><a class="unknown download-link" href="downloads.html"><span class="download">Download</span></a
