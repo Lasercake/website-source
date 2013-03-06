@@ -116,11 +116,11 @@ span.download {
 a.download-link {
 	display:none;
 }
-body.windows.x86 a.download-link.windows.x86 { display:inline; }
-body.windows.x64 a.download-link.windows.x64 { display:inline; }
-body.mac.x64 a.download-link.mac.x64 { display:inline; }
-body.linux.x86 a.download-link.linux.x86 { display:inline; }
-body.linux.x64 a.download-link.linux.x64 { display:inline; }
+body.windows-x86 a.download-link.windows-x86 { display:inline; }
+body.windows-x64 a.download-link.windows-x64 { display:inline; }
+body.mac-x64 a.download-link.mac-x64 { display:inline; }
+body.linux-x86 a.download-link.linux-x86 { display:inline; }
+body.linux-x64 a.download-link.linux-x64 { display:inline; }
 body.unknown a.download-link.unknown { display:inline; }
 body.unknown span#download-other-plus-separators { display:none; }
 
@@ -160,7 +160,7 @@ body {
 </head>
 <!-- so, if IE <= 8 and no JavaScript, the Win32 binary is a good guess. -->
 <!--[if !lte IE 8]><!--><body class="unknown"><!--<![endif]-->
-<!--[if lte IE 8]><body class="windows x86"><![endif]-->
+<!--[if lte IE 8]><body class="windows-x86"><![endif]-->
 	<script>
 	/* @licstart HTML/CSS/JS freely AGPL3+-licensed by Isaac Dupree, 2013 @licend */
 	(function(){
@@ -168,15 +168,15 @@ body {
 		var ua = window.navigator.userAgent;
 		var cls;
 		if(/Intel Mac OS X/.test(ua)) {
-			cls = 'mac x64';
+			cls = 'mac-x64';
 		} else if(/(Win64|WOW64)/.test(ua)) {
-			cls = 'windows x64';
+			cls = 'windows-x64';
 		} else if(/Windows NT/.test(ua)) {
-			cls = 'windows x86';
+			cls = 'windows-x86';
 		} else if(/Linux x86_64/.test(ua)) {
-			cls = 'linux x64';
+			cls = 'linux-x64';
 		} else if(/Linux i[3456]86/.test(ua)) {
-			cls = 'linux x86';
+			cls = 'linux-x86';
 		} else {
 			cls = 'unknown';
 		}
@@ -192,11 +192,11 @@ body {
 		<p id="downloads"
 		><img class="lasercake-icon" src="/_cacheable/icon-64x64.png" width="64" height="64" alt="Lasercake" /><span id="main-download"
 			><a class="unknown download-link" href="downloads.html"><span class="download">Download</span></a
-			><a class="windows x86 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Windows</span></a
-			><a class="windows x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x64-windows.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x64 Windows</span></a
-			><a class="mac x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86_64-mac.dmg"><span class="download">Download</span><br /><span class="which-download">0.22; Mac OS X</span></a
-			><a class="linux x86 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Linux</span></a
-			><a class="linux x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-x86_64-linux-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86_64 Linux</span></a
+			><a class="windows-x86 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-win32.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Windows</span></a
+			><a class="windows-x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-win64.zip"><span class="download">Download</span><br /><span class="which-download">0.22; x64 Windows</span></a
+			><a class="mac-x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-OSX.dmg"><span class="download">Download</span><br /><span class="which-download">0.22; Mac OS X</span></a
+			><a class="linux-x86 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-linux-x86-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86 Linux</span></a
+			><a class="linux-x64 download-link" href="https://lasercake.s3.amazonaws.com/releases/Lasercake-0.22-linux-x86_64-dynamic.tar.gz"><span class="download">Download</span><br /><span class="which-download">0.22; x86_64 Linux</span></a
 		></span><span id="download-other-plus-separators"
 		> | <a id="download-other" href="/downloads">Other downloads</a
 		></span

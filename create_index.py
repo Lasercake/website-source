@@ -25,7 +25,7 @@ def escape(s): return cgi.escape(s, True)
 
 def human_size_str(n):
 	k = 1024
-	if   n < k**1: return str(n)
+	if   n < k**1: return str(n)+'bytes'
 	elif n < k**2: return str(round(n/k**1, 1))+'kiB'
 	elif n < k**3: return str(round(n/k**2, 1))+'MiB'
 	elif n < k**4: return str(round(n/k**3, 1))+'GiB'
@@ -63,7 +63,7 @@ a:visited{color:purple;}
 </style>
 </head>
 <body>
-<p><a href="http://www.lasercake.net/"><img src="//d2dvq9ryeo0vx7.cloudfront.net/_cacheable/icon-64x64.png" alt="Lasercake" /></a> <a href="http://www.lasercake.net/downloads">[back]</a></p>
+<p><a href="http://www.lasercake.net/"><img src="//d2dvq9ryeo0vx7.cloudfront.net/_cacheable/icon-64x64.png" width="64" height="64" alt="Lasercake" /></a> <a href="http://www.lasercake.net/downloads">[back]</a></p>
 <p>PGP sigs are by Isaac Dupree, fingerprint AC5B DA24 40BD BF34 C4C7 DCF3 9ADC 2732 1706 2391</p>
 <table>
 <tr>
@@ -78,7 +78,7 @@ for fdir, subdirs, files in os.walk('./'):
 	for fname in files:
 		fpaths.append(os.path.join(fdir, fname)[2:])
 for fpath in sorted(fpaths, key=distutils.version.LooseVersion):
-	line = """<tr><td><a href="{path}">{path}</a></td><td>{size}</td><td>{sha}</td></tr>\n""".format(
+	line = """<tr><td><a href="releases/{path}">{path}</a></td><td>{size}</td><td>{sha}</td></tr>\n""".format(
 		sha = escape(sha256file(fpath).hexdigest()),
 		size = escape(human_size_str(os.stat(fpath).st_size)),
 		path = escape(fpath))

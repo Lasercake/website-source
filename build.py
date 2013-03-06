@@ -59,7 +59,8 @@ shutil.copyfile('src/downloads.html', 'compiled/www.lasercake.net/downloads')
 # specifies to Google & co. which path is the canonical path to the file).
 shutil.copyfile('src/index.html', 'compiled/www.lasercake.net/home')
 
-pandoc_html = ['pandoc', '-t', 'html5', '--email-obfuscation=references', '--template=src/markdown-template.html']
+pandoc_html = ['pandoc', '-t', 'html5', '--email-obfuscation=references',
+		'--template=src/markdown-template.html']
 pandoc_rtf = ['pandoc', '-t', 'rtf', '--self-contained']
 
 # Blurb for the website
