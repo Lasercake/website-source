@@ -8,7 +8,7 @@
     is written to [output file] or else stdout.
 """
 
-import sys, os, hashlib, cgi, distutils.version
+import sys, os, hashlib, cgi, re
 
 ### helper functions ###
 
@@ -73,11 +73,17 @@ a:visited{color:purple;}
 </tr>
 """
 
+def version_sort_key(name):
+	# sorting: case insensitive, numerical, -rc is before e.g. -linux
+	# str.casefold() is Python 3.3+, so use str.lower()
+	return re.sub(r'-?(alpha|beta|rc)([-0-9])', ' \1\2',
+		re.sub(r'[0-9]+', lambda m: m.group().zfill(20), name.lower()))
+
 fpaths = []
 for fdir, subdirs, files in os.walk('./'):
 	for fname in files:
 		fpaths.append(os.path.join(fdir, fname)[2:])
-for fpath in sorted(fpaths, key=distutils.version.LooseVersion):
+for fpath in sorted(fpaths, key=version_sort_key):
 	line = """<tr><td><a href="releases/{path}">{path}</a></td><td>{size}</td><td>{sha}</td></tr>\n""".format(
 		sha = escape(sha256file(fpath).hexdigest()),
 		size = escape(human_size_str(os.stat(fpath).st_size)),
