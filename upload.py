@@ -13,7 +13,7 @@ import os, sys, subprocess
 # Note that Cloudfront allows any cache duration from 0 on up,
 # but if you don't specify one, it will default to caching for
 # 24 hours.  So specify!
-# http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html
+# https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html
 cache15minutes = '--add-header=Cache-Control: max-age=900'
 cache2hours = '--add-header=Cache-Control: max-age=7200'
 

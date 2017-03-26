@@ -64,7 +64,7 @@ pandoc_html = ['pandoc', '-t', 'html5', '--email-obfuscation=references',
 pandoc_rtf = ['pandoc', '-t', 'rtf', '--self-contained']
 
 # Blurb for the website
-subprocess.call(pandoc_html + ["src/blurb.markdown", "-Vpagetitle:Lasercake blurb", "-Vrelcanonical=http://www.lasercake.net/blurb", '-o', 'compiled/www.lasercake.net/blurb'])
+subprocess.call(pandoc_html + ["src/blurb.markdown", "-Vpagetitle:Lasercake blurb", "-Vrelcanonical=https://www.lasercake.net/blurb", '-o', 'compiled/www.lasercake.net/blurb'])
 
 subprocess.call(pandoc_rtf + ["src/README.markdown", '-o', 'compiled/misc/ReadMe.rtf'])
 

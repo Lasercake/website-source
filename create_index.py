@@ -13,7 +13,7 @@ import sys, os, hashlib, cgi, re
 ### helper functions ###
 
 def sha256file(path):
-        # http://stackoverflow.com/questions/1131220/get-md5-hash-of-big-files-in-python
+        # https://stackoverflow.com/questions/1131220/get-md5-hash-of-big-files-in-python
         hash1 = hashlib.sha256()
         with open(path, 'rb') as f:
                 for chunk in iter(lambda: f.read(2**20), b''):
@@ -63,7 +63,7 @@ a:visited{color:purple;}
 </style>
 </head>
 <body>
-<p><a href="http://www.lasercake.net/"><img src="//d2dvq9ryeo0vx7.cloudfront.net/_cacheable/icon-64x64.png" width="64" height="64" alt="Lasercake" /></a> <a href="http://www.lasercake.net/downloads">[back]</a></p>
+<p><a href="https://www.lasercake.net/"><img src="//d2dvq9ryeo0vx7.cloudfront.net/_cacheable/icon-64x64.png" width="64" height="64" alt="Lasercake" /></a> <a href="https://www.lasercake.net/downloads">[back]</a></p>
 <p>PGP sigs are by <a href="https://www.idupree.com/pgp">Izzy Dupree</a>, fingerprint AC5B DA24 40BD BF34 C4C7 DCF3 9ADC 2732 1706 2391</p>
 <table>
 <tr>
