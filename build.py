@@ -18,10 +18,11 @@
 #   have to install some.
 # Sources:
 #   src/ : Regular source files.
-#   downloadable/ : Put here all the Lasercake source tarballs, binaries
-#       and digital signatures that you intend to be downloadable.
-#       This should always include every binary that we have ever released,
-#       unless something odd happens like a released binary containing malware.
+#   ../Lasercake-releases/releases/ : Check out
+#       https://github.com/Lasercake/Lasercake-releases next to this
+#       website-source git repo.  When releasing a new release of Lasercake,
+#       commit the released archives there (and update any other applicable
+#       site things), then build and upload the site.
 #
 # Destinations:
 #   tmp/ : intermediate files used in compiling but not elsewhere
@@ -113,7 +114,7 @@ subprocess.call(['png2icns', 'compiled/misc/icon-multires.icns']
 # The path in fact is /releases, not /releases.html, but we're also creating
 # a directory called /releases and our local filesystem can't handle them both
 # existing at the same place (though S3 can and has to).
-subprocess.call(['./create_index.py', './downloadable/', 'compiled/s3-lasercake/releases.html'])
+subprocess.call(['./create_index.py', '../Lasercake-releases/releases/', 'compiled/s3-lasercake/releases.html'])
 
-subprocess.call(['rsync', '-a', './downloadable/', 'compiled/s3-lasercake/releases'])
+subprocess.call(['rsync', '-a', '../Lasercake-releases/releases/', 'compiled/s3-lasercake/releases'])
 
